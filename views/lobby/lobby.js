@@ -8,13 +8,18 @@ export default class LobbyView extends React.Component {
   render() {
     return (
       <div className="lobbyView--container">
-        <div className="lobbyView--header">Memory Game</div>
+        <div className="lobbyView--header">{this.props.gameTitle}</div>
         <div className="lobbyView--buttonContainer">
-          <button className="lobbyView--button" onClick={ () => { this.props.setGameOptions([3, 4]) }}>3x4</button>
-          <button className="lobbyView--button" onClick={ () => { this.props.setGameOptions([5, 2]) }}>5x2</button>
-          <button className="lobbyView--button" onClick={ () => { this.props.setGameOptions([4, 4]) }}>4x4</button>
-          <button className="lobbyView--button" onClick={ () => { this.props.setGameOptions([4, 5]) }}>4x5</button>
+          { this.props.gameOptions.map((choice, index) =>
+            <button
+              key={'lobby-' + index}
+              className="lobbyView--button"
+              onClick={ () => { this.props.setGameOptions(choice) }}>
+                {choice[0]}x{choice[1]}
+            </button>
+          ) }
         </div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-buddha" title="Pixel Buddha">Pixel Buddha</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
       </div>
     )
   }

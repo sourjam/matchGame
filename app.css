@@ -49,6 +49,10 @@ html, body {
   font-weight: bold;
 }
 
+.lobbyView--container div:last-child {
+  margin-top: 3em;
+}
+
 /* Gameplay View */
 .gameplayView--header {
   position: relative;

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Config from './config';
 
 import LobbyView from './views/lobby/lobby';
 import GameplayView from './views/gameplay/gameplay';
@@ -26,9 +27,13 @@ export default class MatchGame extends React.Component {
     return (
       <div id="matchGameApp">
         { this.state.gameOptions.length > 0 ?
-          <GameplayView clearGameOptions={this.clearGameOptions} gameOptions={this.state.gameOptions}/>
+          <GameplayView
+            clearGameOptions={this.clearGameOptions} gameOptions={this.state.gameOptions}/>
           :
-          <LobbyView setGameOptions={this.setGameOptions} />
+          <LobbyView
+            gameTitle={Config.gameTitle}
+            gameOptions={Config.gameOptions}
+            setGameOptions={this.setGameOptions} />
         }
       </div>
     )
