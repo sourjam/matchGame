@@ -24,7 +24,8 @@ html, body {
 
 .lobbyView--button {
   padding: 1em;
-  width: 50%;
+  width: 100%;
+  max-width: 9em;
   margin-top: .2em;
   border: none;
   outline: none;
@@ -106,11 +107,13 @@ html, body {
 
 .gameplayCard--front, .gameplayCard--back {
   position: absolute;
-  width: 2em;
-  height: 2em;
+  width: 100%;
+  height: 100%;
   background-size: contain;
   cursor: pointer;
   backface-visibility: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .gameplayCard--front {
