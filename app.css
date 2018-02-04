@@ -1,0 +1,49 @@
+html, body {
+  height: 100vh;
+}
+
+#matchGameApp {
+  height: 100%;
+}
+
+/* lobbyView */
+.lobbyView--container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lobbyView--header {
+  font-size: 2em;
+  font-family: sans-serif;
+  max-width: 50%;
+}
+
+.lobbyView--buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+  max-width: 50%;
+}
+
+.lobbyView--button {
+  padding: 1em;
+  width: 50%;
+  margin-top: .2em;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: skyblue;
+  font-size: 1.5em;
+}
+
+.lobbyView--button:hover {
+  cursor: pointer;
+  background-color: navy;
+  color: whitesmoke;
+  font-weight: bold;
+}
