@@ -28,6 +28,7 @@ export default class MatchGame extends React.Component {
       <div id="matchGameApp">
         { this.state.gameOptions.length > 0 ?
           <GameplayView
+            gameCards={Config.gameCards}
             clearGameOptions={this.clearGameOptions} gameOptions={this.state.gameOptions}/>
           :
           <LobbyView

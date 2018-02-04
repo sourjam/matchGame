@@ -1,22 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Helpers from './helpers';
+import GameplayRow from './gameplayRow';
 
 export default class GameplayView extends React.Component {
   constructor(props) {
     super(props);
+    let shuffledCards = Helpers.shuffleCards(this.props.gameCards.slice(0));
+
     this.state = {};
-    this.state.boardWidth = props.gameOptions[0]; // cards in each row
-    this.state.boardHeight = props.gameOptions[1]; // rows to create
-    this.state.totalCards = props.gameOptions[0] * props.gameOptions[1];
+    this.state.gameBoard = Helpers.makeGameBoard(shuffledCards, props.gameOptions);
+    this.state.pristineBoard = this.state.gameBoard.slice(0);
+    this.state.selectedCard = [];
+
+    this.pickCard = this.pickCard.bind(this);
   }
-  componentDidMount() {
-    // generate random order of total cards and divide into buckets for each row
+  pickCard(card) {
+
   }
   render() {
     return (
       <div className="gameplayView--container">
         <div className="gameplayView--header">
-          Gameplay
+          { this.state.gameBoard.map((row) => {
+
+          })}
           <button onClick={this.props.clearGameOptions} className="gameplayView--backButton">Back</button>
         </div>
       </div>
