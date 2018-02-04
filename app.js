@@ -10,17 +10,23 @@ export default class MatchGame extends React.Component {
     this.state = {};
     this.state.gameOptions = [];
     this.setGameOptions = this.setGameOptions.bind(this);
+    this.clearGameOptions = this.clearGameOptions.bind(this);
   }
   setGameOptions(options) {
     this.setState({
       gameOptions: options
     })
   }
+  clearGameOptions() {
+    this.setState({
+      gameOptions: []
+    })
+  }
   render() {
     return (
       <div id="matchGameApp">
         { this.state.gameOptions.length > 0 ?
-          <GameplayView gameOptions={this.state.gameOptions}/>
+          <GameplayView clearGameOptions={this.clearGameOptions} gameOptions={this.state.gameOptions}/>
           :
           <LobbyView setGameOptions={this.setGameOptions} />
         }

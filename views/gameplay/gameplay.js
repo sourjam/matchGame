@@ -8,7 +8,10 @@ export default class GameplayView extends React.Component {
   render() {
     return (
       <div className="gameplayView--container">
-        <div className="gameplayView--header">Gameplay</div>
+        <div className="gameplayView--header">
+          Gameplay
+          <button onClick={this.props.clearGameOptions} className="gameplayView--backButton">Back</button>
+        </div>
       </div>
     )
   }

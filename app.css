@@ -6,8 +6,8 @@ html, body {
   height: 100%;
 }
 
-/* lobbyView */
-.lobbyView--container {
+/* Shared */
+.lobbyView--container, .gameplayView--container {
   height: 100%;
   width: 100%;
   display: flex;
@@ -16,17 +16,9 @@ html, body {
   justify-content: center;
 }
 
-.lobbyView--header {
+.lobbyView--header, .gameplayView--header {
   font-size: 2em;
   font-family: sans-serif;
-  max-width: 50%;
-}
-
-.lobbyView--buttonContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 50%;
   max-width: 50%;
 }
 
@@ -41,9 +33,29 @@ html, body {
   font-size: 1.5em;
 }
 
+/* Lobby View */
+.lobbyView--buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+  max-width: 50%;
+}
+
 .lobbyView--button:hover {
   cursor: pointer;
   background-color: navy;
   color: whitesmoke;
   font-weight: bold;
+}
+
+/* Gameplay View */
+.gameplayView--header {
+  position: relative;
+}
+
+.gameplayView--backButton {
+  position: absolute;
+  left: -50%;
+  padding: .2em;
 }
