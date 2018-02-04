@@ -19,7 +19,7 @@ html, body {
 .lobbyView--header, .gameplayView--header {
   font-size: 2em;
   font-family: sans-serif;
-  max-width: 50%;
+  max-width: 60%;
 }
 
 .lobbyView--button {
@@ -60,7 +60,8 @@ html, body {
 
 .gameplayView--backButton {
   position: absolute;
-  left: -5em;
+  top: 1%;
+  left: -30%;
   padding: .2em;
   background-size: contain;
   background-repeat: no-repeat;
@@ -68,7 +69,6 @@ html, body {
   height: 1em;
   width: 1em;
   padding: .5em;
-  top: 0;
 }
 
 .gameplayView--backButton:hover {
@@ -99,30 +99,26 @@ html, body {
   transition: transform 1s;
 }
 
-.gameplayCard--front {
+.gameplayCard.flipped {
+  transform-origin: center;
+  transform: rotateY(180deg);
+}
+
+.gameplayCard--front, .gameplayCard--back {
   position: absolute;
   width: 2em;
   height: 2em;
   background-size: contain;
   cursor: pointer;
   backface-visibility: hidden;
+}
+
+.gameplayCard--front {
   transform-origin: center;
   transform: rotateY(180deg);
 }
 
 .gameplayCard--back {
-  position: absolute;
-  width: 2em;
-  height: 2em;
-  background-size: contain;
-  cursor: pointer;
   background-color: slategray;
   border-radius: 5px;
-  backface-visibility: hidden;
-
-}
-
-.gameplayCard.flipped {
-  transform-origin: center;
-  transform: rotateY(180deg);
 }

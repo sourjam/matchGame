@@ -1,5 +1,5 @@
+// Fisher Yates Shuffle from Mike Bostock
 const shuffleCards = (array) => {
-  // Fisher Yates Shuffle
   let copy = [];
   let n = array.length;
   let i;
@@ -10,6 +10,7 @@ const shuffleCards = (array) => {
   return copy;
 }
 
+// generates rows of cards by keeping track of how many cards go in each row
 const generateRows = (array, cardsPerRow) => {
   let cardsArray = array.slice(0);
   let gameBoard = [];
@@ -27,12 +28,14 @@ const generateRows = (array, cardsPerRow) => {
   return gameBoard;
 }
 
+// generates gameboard by checking how many unique cards are needed in total
+// then creates list of all cards for gameplay session, shuffles and returns the board
 const makeGameBoard = (shuffledCards, gameOptions) => {
   let uniquesNeeded = (gameOptions[0] * gameOptions[1]) / 2;
   let sessionCards = [];
   for (let i = 0; i < uniquesNeeded; i++) {
-    sessionCards.push([shuffledCards[i], 0]);
-    sessionCards.push([shuffledCards[i], 0]);
+    sessionCards.push(shuffledCards[i]);
+    sessionCards.push(shuffledCards[i]);
   }
   sessionCards = shuffleCards(sessionCards);
   return generateRows(sessionCards, gameOptions[0]);

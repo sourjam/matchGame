@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// 3D flipping animation is done via CSS
 const GameplayCard = (props) => {
   let id = '' + props.rowIndex + props.cardIndex;
   return (
@@ -12,10 +13,10 @@ const GameplayCard = (props) => {
           className="gameplayCard--back"
           onClick={ () => { props.pickCard(props.cardData, id) } }></div>
         <div
-          style={{backgroundImage: 'url("./views/gameplay/assets/' + props.cardData[0] + '")'}}
+          style={{backgroundImage: 'url("./views/gameplay/assets/' + props.cardData + '")'}}
           id={'gameplayCard-' + id}
           className="gameplayCard--front"
-          onClick={ () => { props.pickCard(props.cardData, id) } }></div>
+          ></div>
         </div>
     </div>
   )
@@ -25,7 +26,8 @@ export default class GameplayRow extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  // GameplayView renders GameplayRows which render GameplayCards
+  // rowIndex and cardIndex are used to generate a unique id for DOM selection
   render() {
     return (
       <div className="gameplayRow">

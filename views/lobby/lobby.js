@@ -5,6 +5,7 @@ export default class LobbyView extends React.Component {
   constructor(props) {
     super(props);
   }
+  // LobbyView maps over the possible game board set ups from the Config file
   render() {
     return (
       <div className="lobbyView--container">
