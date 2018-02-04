@@ -60,6 +60,69 @@ html, body {
 
 .gameplayView--backButton {
   position: absolute;
-  left: -50%;
+  left: -5em;
   padding: .2em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  height: 1em;
+  width: 1em;
+  padding: .5em;
+  top: 0;
+}
+
+.gameplayView--backButton:hover {
+  background-color: skyblue;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gameplayRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameplayCard--container {
+  position: relative;
+  perspective: 800px;
+  width: 2em;
+  height: 2em;
+  margin: .5em;
+}
+
+.gameplayCard {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.gameplayCard--front {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background-size: contain;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transform-origin: center;
+  transform: rotateY(180deg);
+}
+
+.gameplayCard--back {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background-size: contain;
+  cursor: pointer;
+  background-color: slategray;
+  border-radius: 5px;
+  backface-visibility: hidden;
+
+}
+
+.gameplayCard.flipped {
+  transform-origin: center;
+  transform: rotateY(180deg);
 }
